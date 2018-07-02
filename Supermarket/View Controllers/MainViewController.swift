@@ -24,16 +24,6 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPurchaseVC" {
-            let productsListTableViewController = segue.destination as! ProductsListTableViewController
-        }
-        
-        if segue.identifier == "showSalesProducts" {
-            
-        }
-    }
 }
 
 //

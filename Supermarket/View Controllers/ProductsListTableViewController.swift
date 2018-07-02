@@ -7,13 +7,10 @@
 //
 
 import UIKit
-import CoreData
 
 class ProductsListTableViewController: UITableViewController {
     
-    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    var products: [Product] = []
+    var products = ProductsSource.products
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,40 +21,6 @@ class ProductsListTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getProductsFromFile() {
-        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
-        
-        var productsCount = 0
-        
-        do {
-            let count = try context.count(for: fetchRequest)
-            productsCount = count
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-        guard productsCount == 0 else { return }
-        
-        let pathToFile = Bundle.main.path(forResource: "ProductsData", ofType: "plist")
-        let productsArray = NSArray(contentsOfFile: pathToFile!)!
-        
-        for dictionary in productsArray {
-            let entity = NSEntityDescription.entity(forEntityName: "Product", in: context)
-            let product = NSManagedObject(entity: entity!, insertInto: context) as! Product
-            
-            let productsDictionary = dictionary as! NSDictionary
-            
-            product.productTitle = productsDictionary["productTitle"] as? String
-            product.productDescription = productsDictionary["productDescription"] as? String
-            product.productPrice = (productsDictionary["productPrice"] as? Double)!
-            
-            let imageName = productsDictionary["image"] as? String
-            let image = UIImage(named: imageName!)
-            let imageData = UIImagePNGRepresentation(image!)
-            product.image = imageData
-        }
-    }
-
     //
     // - - - - - - - - - - - - - - - -
     // MARK: - Table view data source
@@ -70,7 +33,6 @@ class ProductsListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return products.count
     }
     
@@ -86,9 +48,9 @@ class ProductsListTableViewController: UITableViewController {
         
         let product = products[indexPath.row]
         
-        cell.productTitle.text = product.productTitle
-        cell.productPrice.text = String(product.productPrice)
-        cell.productImage.image = UIImage(data: product.image!)
+        cell.productTitle.text = product.title
+        cell.productPrice.text = product.price
+        cell.productImage.image = product.image
 
         return cell
     }
