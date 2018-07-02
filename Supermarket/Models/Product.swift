@@ -9,19 +9,41 @@
 import Foundation
 import UIKit
 
-class Product {
+struct Product {
     
-    let name: String?
+    let title: String?
     let description: String?
+    let price: String?
+    let count: String?
     let image: UIImage?
-    let price: Float?
-    let count: Float?
+}
+
+extension Product {
     
-    init(name: String?, description: String?, image: UIImage?, price: Float?, count: Float?) {
-        self.name = name
-        self.description = description
-        self.image = image
-        self.price = price
-        self.count = count
+    struct Key {
+        
+        static let title = "title"
+        static let description = "description"
+        static let price = "price"
+        static let count = "count"
+        static let image = "image"
+    }
+    
+    init?(dictionary: [String: String]) {
+        guard let titleString = dictionary[Key.title],
+            let descriptionString = dictionary[Key.description],
+            let priceString = dictionary[Key.price],
+            let countString = dictionary[Key.count] else { return nil }
+        
+        self.title = titleString
+        self.description = descriptionString
+        self.price = priceString
+        self.count = countString
+        
+        if let imageName = dictionary[Key.image] {
+            self.image = UIImage(named: imageName)
+        } else {
+            image = #imageLiteral(resourceName: "no_logo")
+        }
     }
 }
