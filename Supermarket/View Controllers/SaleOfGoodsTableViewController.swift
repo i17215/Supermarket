@@ -1,51 +1,95 @@
 //
-//  SaleTableViewController.swift
+//  SaleOfGoodsTableViewController.swift
 //  Supermarket
 //
-//  Created by Kirill Koleno on 27.06.2018.
+//  Created by Kirill Koleno on 02.07.2018.
 //  Copyright © 2018 Kirill Koleno. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
-class SaleTableViewController: UITableViewController {
+class SaleOfGoodsTableViewController: UITableViewController {
+    
+    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var productsForSale: [ProductForSale] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let fetchRequest: NSFetchRequest<ProductForSale> = ProductForSale.fetchRequest()
+        
+        do {
+            productsForSale = try context.fetch(fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    @IBAction func addProduct(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Добавить товар", message: "Введите название товара", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "ОК", style: .default) { action in
+            let textField = alertController.textFields?[0]
+            
+            self.saveProduct(name: (textField?.text)!)
+            
+            self.tableView.reloadData()
+        }
+        
+        let cancel = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        alertController.addTextField { textField in }
+        
+        alertController.addAction(ok)
+        alertController.addAction(cancel)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func saveProduct(name: String) {
+        let entity = NSEntityDescription.entity(forEntityName: "ProductForSale", in: context)
+        let productObject = NSManagedObject(entity: entity!, insertInto: context) as! ProductForSale
+        productObject.name = name
+        
+        do {
+            try context.save()
+            productsForSale.append(productObject)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return productsForSale.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "saleOfGoods", for: indexPath)
 
-        // Configure the cell...
+        let product = productsForSale[indexPath.row]
+        
+        cell.textLabel?.text = product.name
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,7 +126,6 @@ class SaleTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -90,6 +133,4 @@ class SaleTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }

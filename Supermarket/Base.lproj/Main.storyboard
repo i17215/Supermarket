@@ -37,6 +37,9 @@
                                 <state key="normal" title="Продажа">
                                     <color key="titleColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="N1r-Ml-JNE" kind="show" id="uXd-Dg-Vdf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98667864132300631" green="1" blue="0.95790266350969366" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,6 +64,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1608.8" y="33.733133433283363"/>
+        </scene>
+        <!--Sale Of Goods Table View Controller-->
+        <scene sceneID="BDq-8u-oHy">
+            <objects>
+                <tableViewController id="N1r-Ml-JNE" customClass="SaleOfGoodsTableViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xuz-2m-4SG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="saleOfGoods" id="4ea-ca-Mro">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4ea-ca-Mro" id="pFD-mg-hom">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="N1r-Ml-JNE" id="YBe-CD-Zf6"/>
+                            <outlet property="delegate" destination="N1r-Ml-JNE" id="s72-4L-g3f"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Mz2-OP-Of6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="COV-UP-iEh">
+                            <connections>
+                                <action selector="addProduct:" destination="N1r-Ml-JNE" id="iTY-GD-5OP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KB3-W0-XFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2412" y="450"/>
         </scene>
         <!--Products List Table View Controller-->
         <scene sceneID="6cS-le-1pe">
@@ -123,10 +161,13 @@
                             <outlet property="delegate" destination="1hK-kW-voU" id="crx-6N-dQm"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="jdV-ts-Q5f">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iKm-55-iDF"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ch-Ut-zkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2434" y="34"/>
+            <point key="canvasLocation" x="2402" y="-260"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="ClI-DV-4vr">

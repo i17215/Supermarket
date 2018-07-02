@@ -9,8 +9,6 @@
 		<string>Cмартфон первого поколения iPhone, разработанный и продававшийся корпорацией Apple. Был представлен 9 января 2007 года. Поступил в продажу в США 29 июня 2007 года.</string>
 		<key>price</key>
 		<string>17465</string>
-		<key>count</key>
-		<string></string>
 		<key>image</key>
 		<string>Iphone2g</string>
 	</dict>
@@ -21,8 +19,6 @@
 		<string>Является вторым поколением iPhone. Был представлен в июне 2008 года на WWDC в Сан-Франциско. В отличие от iPhone первого поколения, он поддерживает стандарты UMTS, HSDPA и A-GPS. Кроме того, был анонсирован запуск магазина приложений App Store.</string>
 		<key>price</key>
 		<string>23 000</string>
-		<key>count</key>
-		<string></string>
 		<key>image</key>
 		<string>iphone3g</string>
 	</dict>
@@ -33,8 +29,6 @@
 		<string>Это четвёртое поколение iPhone. Позиционируется для осуществления видео-вызовов (под названием FaceTime), использования медиа, в том числе книг и периодических изданий, фильмов, музыки и игр, и для общего доступа к вебу и электронной почте. Был представлен 7 июня 2010 года на Worldwide Developers Conference в Сан-Франциско.</string>
 		<key>price</key>
 		<string>26 990</string>
-		<key>count</key>
-		<string></string>
 		<key>image</key>
 		<string>iphone4</string>
 	</dict>
@@ -45,8 +39,6 @@
 		<string>Представляет шестое поколение iPhone. Был представлен 12 сентября 2012 года в Сан-Франциско, Калифорния. </string>
 		<key>price</key>
 		<string>34 990</string>
-		<key>count</key>
-		<string></string>
 		<key>image</key>
 		<string>iphone5</string>
 	</dict>
@@ -57,8 +49,6 @@
 		<string>Смартфон корпорации Apple, является преемником iPhone 5. Выполнен в пяти цветовых решениях. Содержит 32-битный процессор Apple A6, и в целом близок по аппаратным возможностям к iPhone 5. Корпус телефона сделан из поликарбоната, в отличие от более дорогого iPhone 5s (алюминий), представленного в тот же день, 10 сентября 2013 года.</string>
 		<key>price</key>
 		<string>24 990</string>
-		<key>count</key>
-		<string></string>
 		<key>image</key>
 		<string>iphone5c</string>
 	</dict>
@@ -69,8 +59,6 @@
 		<string>Представлен 9 сентября 2014 года. Диагональ экрана была значительно увеличена по сравнению с предыдущими моделями: у iPhone 6 до 4,7 дюйма (разрешение 1334×750), а у iPhone 6 Plus до 5,5 дюйма (1920×1080, RetinaHD). Толщина телефонов — около 7 мм без учёта толщины камеры. Смартфоны представляют собой восьмое поколение iPhone</string>
 		<key>price</key>
 		<string>31 990</string>
-		<key>count</key>
-		<string></string>
 		<key>image</key>
 		<string>iphone6</string>
 	</dict>

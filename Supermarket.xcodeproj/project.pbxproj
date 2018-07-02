@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		902EB23F20E943B200F6BAF5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902EB23E20E943B200F6BAF5 /* Product.swift */; };
 		902EB24220E946AE00F6BAF5 /* ProductsData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 902EB24120E946AE00F6BAF5 /* ProductsData.plist */; };
-		902EB24520E947A500F6BAF5 /* PlistLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902EB24420E947A500F6BAF5 /* PlistLoader.swift */; };
-		902EB24720E9494300F6BAF5 /* ProductSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902EB24620E9494300F6BAF5 /* ProductSource.swift */; };
 		902EB24A20E94D5600F6BAF5 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902EB24920E94D5600F6BAF5 /* ProductCell.swift */; };
+		9049E14C20EA374900B22DC0 /* Supermarket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9049E14A20EA374900B22DC0 /* Supermarket.xcdatamodeld */; };
 		904F1C8320E9D83000FBE391 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F1C8220E9D83000FBE391 /* ProductDetailViewController.swift */; };
 		907C241E20E4062900396739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907C241D20E4062900396739 /* AppDelegate.swift */; };
 		907C242020E4062900396739 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907C241F20E4062900396739 /* MainViewController.swift */; };
@@ -19,15 +17,13 @@
 		907C242520E4062B00396739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907C242420E4062B00396739 /* Assets.xcassets */; };
 		907C242820E4062B00396739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907C242620E4062B00396739 /* LaunchScreen.storyboard */; };
 		907C243020E406F800396739 /* ProductsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907C242F20E406F800396739 /* ProductsListTableViewController.swift */; };
-		907C243220E4071700396739 /* SaleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907C243120E4071700396739 /* SaleTableViewController.swift */; };
+		90DAFFA020EA53270076B90A /* SaleOfGoodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DAFF9F20EA53270076B90A /* SaleOfGoodsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		902EB23E20E943B200F6BAF5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		902EB24120E946AE00F6BAF5 /* ProductsData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductsData.plist; sourceTree = "<group>"; };
-		902EB24420E947A500F6BAF5 /* PlistLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistLoader.swift; sourceTree = "<group>"; };
-		902EB24620E9494300F6BAF5 /* ProductSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSource.swift; sourceTree = "<group>"; };
 		902EB24920E94D5600F6BAF5 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		9049E14B20EA374900B22DC0 /* Supermarket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Supermarket.xcdatamodel; sourceTree = "<group>"; };
 		904F1C8220E9D83000FBE391 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		907C241A20E4062900396739 /* Supermarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supermarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907C241D20E4062900396739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +33,9 @@
 		907C242720E4062B00396739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		907C242920E4062B00396739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		907C242F20E406F800396739 /* ProductsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListTableViewController.swift; sourceTree = "<group>"; };
-		907C243120E4071700396739 /* SaleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTableViewController.swift; sourceTree = "<group>"; };
+		90DAFF9B20EA50A50076B90A /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Product+CoreDataClass.swift"; path = "Supermarket/Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		90DAFF9C20EA50A50076B90A /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Product+CoreDataProperties.swift"; path = "Supermarket/Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		90DAFF9F20EA53270076B90A /* SaleOfGoodsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleOfGoodsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,32 +57,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		902EB23D20E9439F00F6BAF5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				902EB23E20E943B200F6BAF5 /* Product.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		902EB24020E9466700F6BAF5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				907C241F20E4062900396739 /* MainViewController.swift */,
 				907C242F20E406F800396739 /* ProductsListTableViewController.swift */,
+				90DAFF9F20EA53270076B90A /* SaleOfGoodsTableViewController.swift */,
 				904F1C8220E9D83000FBE391 /* ProductDetailViewController.swift */,
-				907C243120E4071700396739 /* SaleTableViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		902EB24320E9478E00F6BAF5 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				902EB24420E947A500F6BAF5 /* PlistLoader.swift */,
-				902EB24620E9494300F6BAF5 /* ProductSource.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		902EB24820E94D3E00F6BAF5 /* Views */ = {
@@ -98,6 +79,8 @@
 		907C241120E4062900396739 = {
 			isa = PBXGroup;
 			children = (
+				90DAFF9B20EA50A50076B90A /* Product+CoreDataClass.swift */,
+				90DAFF9C20EA50A50076B90A /* Product+CoreDataProperties.swift */,
 				907C241C20E4062900396739 /* Supermarket */,
 				907C241B20E4062900396739 /* Products */,
 			);
@@ -115,15 +98,14 @@
 			isa = PBXGroup;
 			children = (
 				907C241D20E4062900396739 /* AppDelegate.swift */,
-				902EB24020E9466700F6BAF5 /* View Controllers */,
 				907C242120E4062900396739 /* Main.storyboard */,
+				902EB24020E9466700F6BAF5 /* View Controllers */,
 				902EB24820E94D3E00F6BAF5 /* Views */,
-				902EB23D20E9439F00F6BAF5 /* Models */,
 				902EB23A20E9424700F6BAF5 /* Data */,
-				902EB24320E9478E00F6BAF5 /* Helpers */,
 				907C242420E4062B00396739 /* Assets.xcassets */,
 				907C242620E4062B00396739 /* LaunchScreen.storyboard */,
 				907C242920E4062B00396739 /* Info.plist */,
+				9049E14A20EA374900B22DC0 /* Supermarket.xcdatamodeld */,
 			);
 			path = Supermarket;
 			sourceTree = "<group>";
@@ -200,15 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				902EB24720E9494300F6BAF5 /* ProductSource.swift in Sources */,
-				907C243220E4071700396739 /* SaleTableViewController.swift in Sources */,
+				90DAFFA020EA53270076B90A /* SaleOfGoodsTableViewController.swift in Sources */,
 				904F1C8320E9D83000FBE391 /* ProductDetailViewController.swift in Sources */,
-				902EB24520E947A500F6BAF5 /* PlistLoader.swift in Sources */,
 				907C242020E4062900396739 /* MainViewController.swift in Sources */,
 				907C241E20E4062900396739 /* AppDelegate.swift in Sources */,
 				902EB24A20E94D5600F6BAF5 /* ProductCell.swift in Sources */,
 				907C243020E406F800396739 /* ProductsListTableViewController.swift in Sources */,
-				902EB23F20E943B200F6BAF5 /* Product.swift in Sources */,
+				9049E14C20EA374900B22DC0 /* Supermarket.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +386,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9049E14A20EA374900B22DC0 /* Supermarket.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9049E14B20EA374900B22DC0 /* Supermarket.xcdatamodel */,
+			);
+			currentVersion = 9049E14B20EA374900B22DC0 /* Supermarket.xcdatamodel */;
+			path = Supermarket.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 907C241220E4062900396739 /* Project object */;
 }

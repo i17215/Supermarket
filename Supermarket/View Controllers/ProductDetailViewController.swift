@@ -27,10 +27,10 @@ class ProductDetailViewController: UIViewController {
         
         guard let product = product else { return }
         
-        productImage.image = product.image
-        productTitle.text = product.title
-        productDescription.text = product.description
-        productPrice.text = product.price
+        productImage.image = UIImage(data: product.image!)
+        productTitle.text = product.productTitle
+        productDescription.text = product.productDescription
+        productPrice.text = String(product.productPrice)
         
         productTitle.isUserInteractionEnabled = false
         productPrice.isUserInteractionEnabled = false

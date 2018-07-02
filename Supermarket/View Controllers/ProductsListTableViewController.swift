@@ -7,25 +7,55 @@
 //
 
 import UIKit
+import CoreData
 
 class ProductsListTableViewController: UITableViewController {
     
-    // Create instance of Product array
-    var products = ProductSource.products
+    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var products: [Product] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getProductsFromFile() {
+        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+        
+        var productsCount = 0
+        
+        do {
+            let count = try context.count(for: fetchRequest)
+            productsCount = count
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        guard productsCount == 0 else { return }
+        
+        let pathToFile = Bundle.main.path(forResource: "ProductsData", ofType: "plist")
+        let productsArray = NSArray(contentsOfFile: pathToFile!)!
+        
+        for dictionary in productsArray {
+            let entity = NSEntityDescription.entity(forEntityName: "Product", in: context)
+            let product = NSManagedObject(entity: entity!, insertInto: context) as! Product
+            
+            let productsDictionary = dictionary as! NSDictionary
+            
+            product.productTitle = productsDictionary["productTitle"] as? String
+            product.productDescription = productsDictionary["productDescription"] as? String
+            product.productPrice = (productsDictionary["productPrice"] as? Double)!
+            
+            let imageName = productsDictionary["image"] as? String
+            let image = UIImage(named: imageName!)
+            let imageData = UIImagePNGRepresentation(image!)
+            product.image = imageData
+        }
     }
 
     //
@@ -56,9 +86,9 @@ class ProductsListTableViewController: UITableViewController {
         
         let product = products[indexPath.row]
         
-        cell.productTitle.text = product.title
-        cell.productPrice.text = product.price
-        cell.productImage.image = product.image
+        cell.productTitle.text = product.productTitle
+        cell.productPrice.text = String(product.productPrice)
+        cell.productImage.image = UIImage(data: product.image!)
 
         return cell
     }
