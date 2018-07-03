@@ -33,10 +33,6 @@
 		907C242720E4062B00396739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		907C242920E4062B00396739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		907C242F20E406F800396739 /* ProductsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListTableViewController.swift; sourceTree = "<group>"; };
-		907E8B8120EB9DEC006A8A15 /* ProductForSale+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductForSale+CoreDataClass.swift"; path = "Supermarket/ProductForSale+CoreDataClass.swift"; sourceTree = "<group>"; };
-		907E8B8220EB9DEC006A8A15 /* ProductForSale+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ProductForSale+CoreDataProperties.swift"; path = "Supermarket/ProductForSale+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		90DAFF9B20EA50A50076B90A /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Product+CoreDataClass.swift"; path = "Supermarket/Product+CoreDataClass.swift"; sourceTree = "<group>"; };
-		90DAFF9C20EA50A50076B90A /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Product+CoreDataProperties.swift"; path = "Supermarket/Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		90DAFF9F20EA53270076B90A /* SaleOfGoodsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleOfGoodsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,10 +77,6 @@
 		907C241120E4062900396739 = {
 			isa = PBXGroup;
 			children = (
-				907E8B8120EB9DEC006A8A15 /* ProductForSale+CoreDataClass.swift */,
-				907E8B8220EB9DEC006A8A15 /* ProductForSale+CoreDataProperties.swift */,
-				90DAFF9B20EA50A50076B90A /* Product+CoreDataClass.swift */,
-				90DAFF9C20EA50A50076B90A /* Product+CoreDataProperties.swift */,
 				907C241C20E4062900396739 /* Supermarket */,
 				907C241B20E4062900396739 /* Products */,
 			);
@@ -337,7 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HEF9E2MMFK;
 				INFOPLIST_FILE = Supermarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -355,7 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HEF9E2MMFK;
 				INFOPLIST_FILE = Supermarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
