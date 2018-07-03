@@ -81,6 +81,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="GRb-TF-yzN" kind="show" identifier="showSaledProductDetails" id="i2d-yS-2Yd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -309,4 +312,7 @@
     <resources>
         <image name="no_logo" width="500" height="500"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="i2d-yS-2Yd"/>
+    </inferredMetricsTieBreakers>
 </document>

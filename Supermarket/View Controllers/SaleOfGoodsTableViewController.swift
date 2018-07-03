@@ -129,6 +129,13 @@ class SaleOfGoodsTableViewController: UITableViewController {
     // - - - - - - - - - -
     //
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showSaledProductDetails" {
+//            if let indexPath = tableView.indexPathForSelectedRow {
+//                let selectedProduct = productsForSale[indexPath.row]
+//                
+//                let productDetailViewController = segue.destination as! ProductDetailViewController
+//            }
+//        }
+//    }
 }
