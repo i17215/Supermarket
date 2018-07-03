@@ -7,18 +7,67 @@
 //
 
 import UIKit
+import CoreData
 
 class ProductsListTableViewController: UITableViewController {
     
-    var products = ProductsSource.products
+    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var products = [Product]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getDataFronFile()
+        
+        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+
+            products = results
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getDataFronFile() {
+        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+        
+        var records = 0
+        
+        do {
+            let count = try context.count(for: fetchRequest)
+            records = count
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        guard records == 0 else { return }
+        
+        let pathToFile = Bundle.main.path(forResource: "ProductsData", ofType: "plist")
+        let productsArray = NSArray(contentsOfFile: pathToFile!)
+        
+        for dictionary in productsArray! {
+            let entity = NSEntityDescription.entity(forEntityName: "Product", in: context)
+            let product = NSManagedObject(entity: entity!, insertInto: context) as! Product
+            
+            let productDictionary = dictionary as! NSDictionary
+            
+            product.title = productDictionary["title"] as? String
+            product.productDescription = productDictionary["productDescription"] as? String
+            product.price = productDictionary["price"] as? String
+            
+            let imageName = productDictionary["image"] as? String
+            let image = UIImage(named: imageName!)
+            let imageData = UIImagePNGRepresentation(image!)
+            product.imageData = imageData
+        }
     }
     
     //
@@ -50,45 +99,10 @@ class ProductsListTableViewController: UITableViewController {
         
         cell.productTitle.text = product.title
         cell.productPrice.text = product.price
-        cell.productImage.image = product.image
+        cell.productImage.image = UIImage(data: product.imageData!)
 
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     //
     // - - - - - - - - - -
