@@ -17,8 +17,6 @@
 		907C242520E4062B00396739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907C242420E4062B00396739 /* Assets.xcassets */; };
 		907C242820E4062B00396739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907C242620E4062B00396739 /* LaunchScreen.storyboard */; };
 		907C243020E406F800396739 /* ProductsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907C242F20E406F800396739 /* ProductsListTableViewController.swift */; };
-		907E8B8320EB9DEC006A8A15 /* ProductForSale+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907E8B8120EB9DEC006A8A15 /* ProductForSale+CoreDataClass.swift */; };
-		907E8B8420EB9DEC006A8A15 /* ProductForSale+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907E8B8220EB9DEC006A8A15 /* ProductForSale+CoreDataProperties.swift */; };
 		90DAFFA020EA53270076B90A /* SaleOfGoodsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DAFF9F20EA53270076B90A /* SaleOfGoodsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -189,13 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				90DAFFA020EA53270076B90A /* SaleOfGoodsTableViewController.swift in Sources */,
-				907E8B8420EB9DEC006A8A15 /* ProductForSale+CoreDataProperties.swift in Sources */,
 				904F1C8320E9D83000FBE391 /* ProductDetailViewController.swift in Sources */,
 				907C242020E4062900396739 /* MainViewController.swift in Sources */,
 				907C241E20E4062900396739 /* AppDelegate.swift in Sources */,
 				902EB24A20E94D5600F6BAF5 /* ProductCell.swift in Sources */,
 				907C243020E406F800396739 /* ProductsListTableViewController.swift in Sources */,
-				907E8B8320EB9DEC006A8A15 /* ProductForSale+CoreDataClass.swift in Sources */,
 				9049E14C20EA374900B22DC0 /* Supermarket.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,7 +337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HEF9E2MMFK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Supermarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -359,7 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HEF9E2MMFK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Supermarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
