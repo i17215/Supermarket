@@ -102,15 +102,25 @@ class SaleOfGoodsTableViewController: UITableViewController {
         
         let productToDelete = productsForSale[indexPath.row]
         
-        context.delete(productToDelete)
+        if editingStyle == .delete {
+            context.delete(productToDelete)
+        }
         
         do {
             try context.save()
-            
-            tableView.deleteRows(at: [indexPath], with: .automatic)
         } catch let error as NSError {
             print("Error: \(error), description: \(error.userInfo)")
         }
+        
+        let fetchRequest: NSFetchRequest<ProductForSale> = ProductForSale.fetchRequest()
+        
+        do {
+            productsForSale = try context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Error While Fetching Data From DB: \(error.userInfo)")
+        }
+        
+        tableView.reloadData()
     }
 
     //
